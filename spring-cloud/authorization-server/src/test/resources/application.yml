@@ -1,0 +1,4 @@
+ak.server.error.include-message: always
+
+ak.spring.cloud.stream.defaultBinder: rabbit
+

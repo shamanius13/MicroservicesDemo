@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/product-service/MicroservicesDemo.microservices.product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/product-service/MicroservicesDemo.microservices.product-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/product-service/MicroservicesDemo.microservices.product-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/product-service/MicroservicesDemo.microservices.product-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/MicroservicesDemo.microservices.recommendation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/MicroservicesDemo.microservices.recommendation-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/MicroservicesDemo.microservices.recommendation-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/MicroservicesDemo.microservices.recommendation-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/MicroservicesDemo.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/MicroservicesDemo.util.main.iml" />
+    </modules>
+  </component>
+</project>

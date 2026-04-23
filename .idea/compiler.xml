@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="MicroservicesDemo.util.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.3/52e345c907fbf173b376586c7f8b131d53fa5867/mapstruct-processor-1.6.3.jar" />
+        </processorPath>
+        <module name="MicroservicesDemo.microservices.product-service.main" />
+        <module name="MicroservicesDemo.microservices.recommendation-service.main" />
+        <module name="MicroservicesDemo.microservices.review-service.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.3/52e345c907fbf173b376586c7f8b131d53fa5867/mapstruct-processor-1.6.3.jar" />
+        </processorPath>
+        <module name="MicroservicesDemo.microservices.recommendation-service.test" />
+        <module name="MicroservicesDemo.microservices.product-service.test" />
+        <module name="MicroservicesDemo.microservices.review-service.test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="25" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MicroservicesDemo.microservices.product-composite-service" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.product-composite-service.main" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.product-composite-service.test" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.product-service" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.product-service.main" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.product-service.test" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.recommendation-service" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.recommendation-service.main" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.recommendation-service.test" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.review-service" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.review-service.main" options="-parameters" />
+      <module name="MicroservicesDemo.microservices.review-service.test" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.authorization-server" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.authorization-server.main" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.authorization-server.test" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.config-server" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.config-server.main" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.config-server.test" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.eureka-server" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.eureka-server.main" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.eureka-server.test" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.gateway" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.gateway.main" options="-parameters" />
+      <module name="MicroservicesDemo.spring-cloud.gateway.test" options="-parameters" />
+    </option>
+  </component>
+</project>
