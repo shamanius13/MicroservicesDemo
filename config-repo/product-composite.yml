@@ -117,7 +117,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, info, circuitbreakers, circuitbreakerevents
+        include: health, info, circuitbreakers, circuitbreakerevents, retries, retryevents
 
 resilience4j.circuitbreaker:
   instances:

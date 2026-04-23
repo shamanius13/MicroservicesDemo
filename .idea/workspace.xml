@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1d8a9b3-37a4-4b6c-b052-eeb7a539f568" name="Changes" comment="pre zipkin" />
+    <list default="true" id="a1d8a9b3-37a4-4b6c-b052-eeb7a539f568" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/product-composite.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/product-composite.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="227" />
+    <option name="cachedIndexableFilesCount" value="224" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -94,12 +97,15 @@
     &quot;assignee&quot;: &quot;shamanius13&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/shamanius13/MicroservicesDemo&quot;,
-    &quot;accountId&quot;: &quot;45db3ded-f27c-4371-ad86-766bfa26e0e6&quot;
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="45db3ded-f27c-4371-ad86-766bfa26e0e6" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:shamanius13/MicroservicesDemo.git",
+    "accountId": "45db3ded-f27c-4371-ad86-766bfa26e0e6"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -198,7 +204,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;two.files.diff.last.used.folder&quot;: &quot;/Users/alex/Documents/GitHub/microservices-with-spring-boot-and-spring-cloud-fourth-edition/Chapter15&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -552,7 +558,8 @@
       <workItem from="1776895053202" duration="1400000" />
       <workItem from="1776941226567" duration="552000" />
       <workItem from="1776944168748" duration="7350000" />
-      <workItem from="1776956718584" duration="315000" />
+      <workItem from="1776956718584" duration="1153000" />
+      <workItem from="1776957893951" duration="1760000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
