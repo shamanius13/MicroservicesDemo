@@ -39,7 +39,8 @@ dependencies {
 
     implementation 'org.mapstruct:mapstruct:1.6.3'
 
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+    implementation 'org.springframework.boot:spring-boot-micrometer-tracing-opentelemetry'
+    implementation 'org.springframework.boot:spring-boot-starter-zipkin'
     implementation 'io.opentelemetry:opentelemetry-exporter-zipkin'
 
     compileOnly 'org.projectlombok:lombok:1.18.42'

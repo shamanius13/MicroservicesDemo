@@ -37,7 +37,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-aop:4.0.0-M2'
     implementation 'org.springframework.retry:spring-retry'
 
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+    implementation 'org.springframework.boot:spring-boot-micrometer-tracing-opentelemetry'
+    implementation 'org.springframework.boot:spring-boot-starter-zipkin'
     implementation 'io.opentelemetry:opentelemetry-exporter-zipkin'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

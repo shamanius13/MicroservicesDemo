@@ -40,7 +40,8 @@ dependencies {
     implementation 'org.mapstruct:mapstruct:1.6.3'
     implementation 'com.mysql:mysql-connector-j:9.6.0'
 
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+    implementation 'org.springframework.boot:spring-boot-micrometer-tracing-opentelemetry'
+    implementation 'org.springframework.boot:spring-boot-starter-zipkin'
     implementation 'io.opentelemetry:opentelemetry-exporter-zipkin'
     implementation 'net.ttddyy.observation:datasource-micrometer-spring-boot:2.2.0'
 

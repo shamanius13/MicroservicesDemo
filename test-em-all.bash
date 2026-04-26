@@ -84,6 +84,40 @@ function waitForService() {
   echo "DONE, continues..."
 }
 
+function waitForEurekaRegistrations() {
+  local expectedCount=$1
+  local n=0
+
+  echo "Waiting for Eureka registrations (expected: $expectedCount)..."
+  while true
+  do
+    local response
+    local actualCount
+
+    response=$(curl -H "accept:application/json" -k https://u:p@"$HOST":"$PORT"/eureka/api/apps -s)
+    actualCount=$(echo "$response" | jq '(.applications.application // []) | if type=="array" then length else 1 end')
+
+    if [ "$actualCount" = "$expectedCount" ]
+    then
+      RESPONSE="$response"
+      echo "Eureka registrations ready (actual value: $actualCount)"
+      return 0
+    fi
+
+    n=$((n + 1))
+    if [[ $n == 40 ]]
+    then
+      echo "Test FAILED, EXPECTED VALUE: $expectedCount, ACTUAL VALUE: $actualCount, WILL ABORT"
+      echo "Eureka applications currently registered:"
+      echo "$response" | jq '.applications.application'
+      exit 1
+    fi
+
+    echo "Waiting for Eureka registrations..., retry #$n (actual value: $actualCount)"
+    sleep 3
+  done
+}
+
 function testCompositeCreated() {
 
     # Expect that the Product Composite for productId $PROD_ID_REVS_RECS has been created with three recommendations and three reviews
@@ -251,8 +285,7 @@ echo ACCESS_TOKEN="$ACCESS_TOKEN"
 AUTH="-H \"Authorization: Bearer $ACCESS_TOKEN\""
 
 # Verify access to Eureka and that all microservices are registered in Eureka
-assertCurl 200 "curl -H \"accept:application/json\" -k https://u:p@$HOST:$PORT/eureka/api/apps -s"
-assertEqual 6 "$(echo "$RESPONSE" | jq ".applications.application | length")"
+waitForEurekaRegistrations 6
 
 # Verify access to the Config server and that its encrypt/decrypt endpoints work
 assertCurl 200 "curl -H \"accept:application/json\" -k https://dev-usr:dev-pwd@$HOST:$PORT/config/product/docker -s"
