@@ -1,6 +1,10 @@
 server.port: 7003
 server.error.include-message: always
 
+spring.application.name: recommendation
+
+management.endpoint.health.group.readiness.include: readinessState, rabbit, mongo
+
 spring.data.mongodb:
   host: localhost
   port: 27017
@@ -36,7 +40,7 @@ logging:
 ---
 spring.config.activate.on-profile: docker
 
-server.port: 8080
+server.port: 80
 
 spring.mongodb.host: mongodb
 
@@ -56,3 +60,19 @@ spring.cloud.stream.bindings.messageProcessor-in-0.consumer.instanceIndex: 0
 spring.config.activate.on-profile: streaming_instance_1
 
 spring.cloud.stream.bindings.messageProcessor-in-0.consumer.instanceIndex: 1
+
+---
+spring.config.activate.on-profile: kafka
+
+management.endpoint.health.group.readiness.include: readinessState, mongo
+
+---
+spring.config.activate.on-profile: prod
+
+spring.mongodb.host: 172.17.0.1
+
+logging:
+  level:
+    root: WARN
+    ak83: WARN
+    org.springframework.data.mongodb.core.ReactiveMongoTemplate: WARN

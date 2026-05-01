@@ -50,9 +50,9 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
   private final Scheduler publishEventScheduler;
 
-  private static final String PRODUCT_SERVICE_URL = "http://product:8080";
-  private static final String RECOMMENDATION_SERVICE_URL = "http://recommendation:8080";
-  private static final String REVIEW_SERVICE_URL = "http://review:8080";
+  private static final String PRODUCT_SERVICE_URL = "http://product";
+  private static final String RECOMMENDATION_SERVICE_URL = "http://recommendation";
+  private static final String REVIEW_SERVICE_URL = "http://review";
 
   private final ServiceUtil serviceUtil;
 

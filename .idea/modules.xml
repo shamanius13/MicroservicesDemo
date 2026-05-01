@@ -8,6 +8,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/MicroservicesDemo.microservices.recommendation-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/recommendation-service/MicroservicesDemo.microservices.recommendation-service.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/review-service/MicroservicesDemo.microservices.review-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/authorization-server/MicroservicesDemo.spring-cloud.authorization-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/authorization-server/MicroservicesDemo.spring-cloud.authorization-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/authorization-server/MicroservicesDemo.spring-cloud.authorization-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/authorization-server/MicroservicesDemo.spring-cloud.authorization-server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/config-server/MicroservicesDemo.spring-cloud.config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/config-server/MicroservicesDemo.spring-cloud.config-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/config-server/MicroservicesDemo.spring-cloud.config-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/config-server/MicroservicesDemo.spring-cloud.config-server.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/MicroservicesDemo.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/MicroservicesDemo.util.main.iml" />
     </modules>
   </component>

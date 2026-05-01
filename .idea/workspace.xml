@@ -4,9 +4,134 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1d8a9b3-37a4-4b6c-b052-eeb7a539f568" name="Changes" comment="init">
+    <list default="true" id="a1d8a9b3-37a4-4b6c-b052-eeb7a539f568" name="Changes" comment="zipkin fix">
+      <change afterPath="$PROJECT_DIR$/kubernetes/first-attempts/nginx-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/first-attempts/nginx-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/templates/_configmap_from_file.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/templates/_deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/templates/_helpers.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/templates/_secrets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/templates/_service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/common/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/auth-server/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/auth-server/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/auth-server/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/auth-server/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/auth-server/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/auth-server/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/config-repo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/templates/configmap_from_file.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/config-server/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/gateway/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/gateway/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/gateway/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/gateway/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/gateway/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/gateway/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mongodb/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mongodb/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mongodb/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mongodb/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mongodb/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mysql/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mysql/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mysql/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mysql/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/mysql/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product-composite/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product-composite/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product-composite/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product-composite/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product-composite/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product-composite/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/product/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/rabbitmq/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/rabbitmq/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/rabbitmq/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/rabbitmq/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/rabbitmq/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/recommendation/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/recommendation/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/recommendation/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/recommendation/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/recommendation/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/recommendation/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/review/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/review/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/review/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/review/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/review/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/review/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/zipkin-server/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/zipkin-server/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/zipkin-server/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/zipkin-server/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/components/zipkin-server/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/dev-env/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/dev-env/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/dev-env/templates/secrets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/dev-env/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/prod-env/Chart.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/prod-env/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/prod-env/templates/secrets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/helm/environments/prod-env/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/auth-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/auth-server.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/eureka-server.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/gateway.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-repo/product-composite.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/product-composite.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/product.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/product.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/recommendation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/recommendation.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/review.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/review.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/ak83/microservices/composite/product/services/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-composite-service/src/main/java/ak83/microservices/composite/product/services/ProductCompositeIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/product-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/recommendation-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/review-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/authorization-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/authorization-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/authorization-server/src/main/java/ak83/springcloud/authorizationserver/config/AuthorizationServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/authorization-server/src/main/java/ak83/springcloud/authorizationserver/config/AuthorizationServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/main/java/ak83/springcloud/eurekaserver/EurekaServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/main/java/ak83/springcloud/eurekaserver/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/test/java/ak83/springcloud/eurekaserver/EurekaServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/eureka-server/src/test/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway/src/main/java/ak83/springcloud/gateway/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-cloud/gateway/src/main/java/ak83/springcloud/gateway/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-em-all.bash" beforeDir="false" afterPath="$PROJECT_DIR$/test-em-all.bash" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +139,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="224" />
+    <option name="cachedIndexableFilesCount" value="346" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -39,12 +164,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="MicroservicesDemo" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="MicroservicesDemo" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -100,12 +219,12 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="45db3ded-f27c-4371-ad86-766bfa26e0e6" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:shamanius13/MicroservicesDemo.git",
-    "accountId": "45db3ded-f27c-4371-ad86-766bfa26e0e6"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:shamanius13/MicroservicesDemo.git&quot;,
+    &quot;accountId&quot;: &quot;45db3ded-f27c-4371-ad86-766bfa26e0e6&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -125,103 +244,103 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.config-server/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.auth-server: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.config-server: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.eureka: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.gateway: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.mongodb: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.mysql: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.product-composite: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.product: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.rabbitmq: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.recommendation: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.review: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.zipkin-server: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.product-service/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build MicroservicesDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ConfigServerApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EurekaServerApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:microservices:product-composite-service:bootJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:microservices:product-composite-service:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:microservices:product-composite-service:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:microservices:product-service:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:microservices:product-service:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:microservices:review-service:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:authorization-server:bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:authorization-server:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:config-server:bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:config-server:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:config-server:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:eureka-server:bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:eureka-server:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:eureka-server:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:gateway:bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:gateway:build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [:spring-cloud:gateway:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MicroservicesDemo [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OAuth2AuthorizationServerApplicationTests.requestTokenUsingClientCredentialsGrantType.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'MicroservicesDemo.microservices.product-composite-service.test'.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'MicroservicesDemo.microservices.product-service.test'.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'MicroservicesDemo.spring-cloud.eureka-server.test'.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'MicroservicesDemo.spring-cloud.gateway.test'.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.rest-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.rest-api | #3.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;549&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;549&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/Users/alex/Library/Application Support/JetBrains/IntelliJIdea2025.3/plugins/Shell Script/shellcheck&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.OAuth2AuthorizationServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/alex/IdeaProjects/MicroservicesDemo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;two.files.diff.last.used.folder&quot;: &quot;/Users/alex/Documents/GitHub/microservices-with-spring-boot-and-spring-cloud-fourth-edition/Chapter15&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.config-server/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml.auth-server: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.config-server: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.eureka: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.gateway: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.mongodb: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.mysql: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.product-composite: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.product: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.rabbitmq: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.recommendation: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.review: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.zipkin-server: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Docker.product-service/Dockerfile.executor": "Run",
+    "Gradle.Build MicroservicesDemo.executor": "Run",
+    "Gradle.ConfigServerApplicationTests.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.EurekaServerApplicationTests.executor": "Run",
+    "Gradle.MicroservicesDemo [:microservices:product-composite-service:bootJar].executor": "Run",
+    "Gradle.MicroservicesDemo [:microservices:product-composite-service:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:microservices:product-composite-service:clean].executor": "Run",
+    "Gradle.MicroservicesDemo [:microservices:product-service:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:microservices:product-service:clean].executor": "Run",
+    "Gradle.MicroservicesDemo [:microservices:review-service:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:authorization-server:bootRun].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:authorization-server:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:config-server:bootRun].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:config-server:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:config-server:clean].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:eureka-server:bootRun].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:eureka-server:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:eureka-server:clean].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:gateway:bootRun].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:gateway:build].executor": "Run",
+    "Gradle.MicroservicesDemo [:spring-cloud:gateway:clean].executor": "Run",
+    "Gradle.MicroservicesDemo [bootRun].executor": "Run",
+    "Gradle.MicroservicesDemo [build].executor": "Run",
+    "Gradle.MicroservicesDemo [clean].executor": "Run",
+    "Gradle.OAuth2AuthorizationServerApplicationTests.requestTokenUsingClientCredentialsGrantType.executor": "Run",
+    "Gradle.Tests in 'MicroservicesDemo.microservices.product-composite-service.test'.executor": "Run",
+    "Gradle.Tests in 'MicroservicesDemo.microservices.product-service.test'.executor": "Run",
+    "Gradle.Tests in 'MicroservicesDemo.spring-cloud.eureka-server.test'.executor": "Run",
+    "Gradle.Tests in 'MicroservicesDemo.spring-cloud.gateway.test'.executor": "Run",
+    "HTTP Request.rest-api | #2.executor": "Run",
+    "HTTP Request.rest-api | #3.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "549",
+    "RequestMappingsPanelWidth1": "549",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHELLCHECK.PATH": "/Users/alex/Library/Application Support/JetBrains/IntelliJIdea2025.3/plugins/Shell Script/shellcheck",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.OAuth2AuthorizationServerApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "git.auto.fetch.suggestion.counter": "1",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/alex/IdeaProjects/MicroservicesDemo/kubernetes/helm/components/config-server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "to.speed.mode.migration.done": "true",
+    "two.files.diff.last.used.folder": "/Users/alex/Documents/GitHub/microservices-with-spring-boot-and-spring-cloud-fourth-edition/Chapter15",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;XPath&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "XPath"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kubernetes/helm/components/config-server" />
+      <recent name="$PROJECT_DIR$/kubernetes" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/config-repo" />
       <recent name="$PROJECT_DIR$/spring-cloud" />
-      <recent name="$PROJECT_DIR$/chapter15" />
-      <recent name="$PROJECT_DIR$/kubernetes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -237,7 +356,6 @@
         <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
     <option name="configurationStatuses">
@@ -247,15 +365,6 @@
             <map>
               <entry key="rest-api | #2" value="STOPPED" />
               <entry key="rest-api | #3" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-        <entry key="SpringBootApplicationConfigurationType">
-          <value>
-            <map>
-              <entry key="ConfigServerApplication" value="FAILED" />
-              <entry key="EurekaServerApplication" value="STOPPED" />
-              <entry key="OAuth2AuthorizationServerApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -559,7 +668,10 @@
       <workItem from="1776941226567" duration="552000" />
       <workItem from="1776944168748" duration="7350000" />
       <workItem from="1776956718584" duration="1153000" />
-      <workItem from="1776957893951" duration="1760000" />
+      <workItem from="1776957893951" duration="6286000" />
+      <workItem from="1777049661741" duration="6725000" />
+      <workItem from="1777126914731" duration="812000" />
+      <workItem from="1777207823822" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -633,7 +745,31 @@
       <option name="project" value="LOCAL" />
       <updated>1776955607274</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix retry endpoint">
+      <option name="closed" value="true" />
+      <created>1776959675271</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1776959675271</updated>
+    </task>
+    <task id="LOCAL-00011" summary="shellcheck fix">
+      <option name="closed" value="true" />
+      <created>1777210724827</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1777210724827</updated>
+    </task>
+    <task id="LOCAL-00012" summary="zipkin fix">
+      <option name="closed" value="true" />
+      <created>1777232364724</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1777232364724</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,6 +798,9 @@
     <MESSAGE value="ch15 all tests passed except CB - no endpoint in SB4" />
     <MESSAGE value="config server only" />
     <MESSAGE value="pre zipkin" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre zipkin" />
+    <MESSAGE value="fix retry endpoint" />
+    <MESSAGE value="shellcheck fix" />
+    <MESSAGE value="zipkin fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="zipkin fix" />
   </component>
 </project>

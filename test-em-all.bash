@@ -2,11 +2,15 @@
 
 : "${HOST=localhost}"
 : "${PORT=8443}"
+: "${USE_K8S=false}"
 : "${PROD_ID_REVS_RECS=1}"
 : "${PROD_ID_NOT_FOUND=13}"
 : "${PROD_ID_NO_RECS=113}"
 : "${PROD_ID_NO_REVS=213}"
 : "${SKIP_CB_TESTS=false}"
+: "${NAMESPACE=hands-on}"
+: "${CONFIG_SERVER_USR=dev-usr}"
+: "${CONFIG_SERVER_PWD=dev-pwd}"
 
 function assertCurl() {
 
@@ -47,14 +51,6 @@ function assertEqual() {
   fi
 }
 
-function getCircuitBreakerState() {
-  local state
-    state=$(docker compose exec -T product-composite wget -qO - http://product-composite:8080/actuator/circuitbreakers | jq -r '
-      .circuitBreakers.product.state')
-
-  echo "$state"
-}
-
 function testUrl() {
   url=$*
   if $url -ks -f -o /dev/null
@@ -82,40 +78,6 @@ function waitForService() {
     fi
   done
   echo "DONE, continues..."
-}
-
-function waitForEurekaRegistrations() {
-  local expectedCount=$1
-  local n=0
-
-  echo "Waiting for Eureka registrations (expected: $expectedCount)..."
-  while true
-  do
-    local response
-    local actualCount
-
-    response=$(curl -H "accept:application/json" -k https://u:p@"$HOST":"$PORT"/eureka/api/apps -s)
-    actualCount=$(echo "$response" | jq '(.applications.application // []) | if type=="array" then length else 1 end')
-
-    if [ "$actualCount" = "$expectedCount" ]
-    then
-      RESPONSE="$response"
-      echo "Eureka registrations ready (actual value: $actualCount)"
-      return 0
-    fi
-
-    n=$((n + 1))
-    if [[ $n == 40 ]]
-    then
-      echo "Test FAILED, EXPECTED VALUE: $expectedCount, ACTUAL VALUE: $actualCount, WILL ABORT"
-      echo "Eureka applications currently registered:"
-      echo "$response" | jq '.applications.application'
-      exit 1
-    fi
-
-    echo "Waiting for Eureka registrations..., retry #$n (actual value: $actualCount)"
-    sleep 3
-  done
 }
 
 function testCompositeCreated() {
@@ -210,8 +172,15 @@ function testCircuitBreaker() {
 
     echo "Start Circuit Breaker tests!"
 
+    if [[ $USE_K8S == "false" ]]
+    then
+        EXEC="docker compose exec -T product-composite"
+    else
+        EXEC="kubectl -n $NAMESPACE exec deploy/product-composite -- "
+    fi
+
     # First, use the health - endpoint to verify that the circuit breaker is closed
-    assertEqual "CLOSED" "$(getCircuitBreakerState)"
+    assertEqual "CLOSED" "$($EXEC wget -qO - http://localhost/actuator/health | jq -r .components.circuitBreakers.details.product.details.state)"
 
     # Open the circuit breaker by running three slow calls in a row, i.e. that cause a timeout exception
     # Also, verify that we get 500 back and a timeout related error message
@@ -223,7 +192,7 @@ function testCircuitBreaker() {
     done
 
     # Verify that the circuit breaker is open
-    assertEqual "OPEN" "$(getCircuitBreakerState)"
+    assertEqual "OPEN" "$($EXEC wget -qO - http://localhost/actuator/health | jq -r .components.circuitBreakers.details.product.details.state)"
 
     # Verify that the circuit breaker now is open by running the slow call again, verify it gets 200 back, i.e. fail fast works, and a response from the fallback method.
     assertCurl 200 "curl -k https://$HOST:$PORT/product-composite/$PROD_ID_REVS_RECS?delay=3 $AUTH -s"
@@ -242,7 +211,7 @@ function testCircuitBreaker() {
     sleep 10
 
     # Verify that the circuit breaker is in half open state
-    assertEqual "HALF_OPEN" "$(getCircuitBreakerState)"
+    assertEqual "HALF_OPEN" "$($EXEC wget -qO - http://localhost/actuator/health | jq -r .components.circuitBreakers.details.product.details.state)"
 
     # Close the circuit breaker by running three normal calls in a row
     # Also, verify that we get 200 back and a response based on information in the product database
@@ -253,12 +222,12 @@ function testCircuitBreaker() {
     done
 
     # Verify that the circuit breaker is in closed state again
-    assertEqual "CLOSED" "$(getCircuitBreakerState)"
+    assertEqual "CLOSED" "$($EXEC wget -qO - http://localhost/actuator/health | jq -r .components.circuitBreakers.details.product.details.state)"
 
     # Verify that the expected state transitions happened in the circuit breaker
-    assertEqual "CLOSED_TO_OPEN"      "$(docker compose exec -T product-composite wget -qO - http://product-composite:8080/actuator/circuitbreakerevents/product/STATE_TRANSITION | jq -r .circuitBreakerEvents[-3].stateTransition)"
-    assertEqual "OPEN_TO_HALF_OPEN"   "$(docker compose exec -T product-composite wget -qO - http://product-composite:8080/actuator/circuitbreakerevents/product/STATE_TRANSITION | jq -r .circuitBreakerEvents[-2].stateTransition)"
-    assertEqual "HALF_OPEN_TO_CLOSED" "$(docker compose exec -T product-composite wget -qO - http://product-composite:8080/actuator/circuitbreakerevents/product/STATE_TRANSITION | jq -r .circuitBreakerEvents[-1].stateTransition)"
+    assertEqual "CLOSED_TO_OPEN"      "$($EXEC wget -qO - http://localhost/actuator/circuitbreakerevents/product/STATE_TRANSITION | jq -r .circuitBreakerEvents[-3].stateTransition)"
+    assertEqual "OPEN_TO_HALF_OPEN"   "$($EXEC wget -qO - http://localhost/actuator/circuitbreakerevents/product/STATE_TRANSITION | jq -r .circuitBreakerEvents[-2].stateTransition)"
+    assertEqual "HALF_OPEN_TO_CLOSED" "$($EXEC wget -qO - http://localhost/actuator/circuitbreakerevents/product/STATE_TRANSITION | jq -r .circuitBreakerEvents[-1].stateTransition)"
 }
 
 set -e
@@ -267,6 +236,7 @@ echo "Start Tests: $(date)"
 
 echo "HOST=${HOST}"
 echo "PORT=${PORT}"
+echo "USE_K8S=${USE_K8S}"
 echo "SKIP_CB_TESTS=${SKIP_CB_TESTS}"
 
 if [[ $* == *"start"* ]]
@@ -284,14 +254,11 @@ ACCESS_TOKEN=$(curl -k https://writer:secret-writer"@$HOST":"$PORT"/oauth2/token
 echo ACCESS_TOKEN="$ACCESS_TOKEN"
 AUTH="-H \"Authorization: Bearer $ACCESS_TOKEN\""
 
-# Verify access to Eureka and that all microservices are registered in Eureka
-waitForEurekaRegistrations 6
-
 # Verify access to the Config server and that its encrypt/decrypt endpoints work
-assertCurl 200 "curl -H \"accept:application/json\" -k https://dev-usr:dev-pwd@$HOST:$PORT/config/product/docker -s"
+assertCurl 200 "curl -H \"accept:application/json\" -k https://$CONFIG_SERVER_USR:$CONFIG_SERVER_PWD@$HOST:$PORT/config/product/docker -s"
 TEST_VALUE="hello-world"
-ENCRYPTED_VALUE=$(curl -k https://dev-usr:dev-pwd@"$HOST":"$PORT"/config/encrypt --data-urlencode "$TEST_VALUE" -s)
-DECRYPTED_VALUE=$(curl -k https://dev-usr:dev-pwd@"$HOST":"$PORT"/config/decrypt -d "$ENCRYPTED_VALUE" -s)
+ENCRYPTED_VALUE=$(curl -k https://$CONFIG_SERVER_USR:$CONFIG_SERVER_PWD@"$HOST":"$PORT"/config/encrypt --data-urlencode "$TEST_VALUE" -s)
+DECRYPTED_VALUE=$(curl -k https://$CONFIG_SERVER_USR:$CONFIG_SERVER_PWD@"$HOST":"$PORT"/config/decrypt -d "$ENCRYPTED_VALUE" -s)
 assertEqual "$TEST_VALUE" "$DECRYPTED_VALUE"
 
 setupTestate
