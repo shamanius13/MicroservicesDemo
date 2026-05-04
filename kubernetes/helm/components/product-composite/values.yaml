@@ -2,6 +2,7 @@ fullnameOverride: product-composite
 
 image:
   name: product-composite-service
+  pullPolicy: Never
 
 env:
   SPRING_PROFILES_ACTIVE: "docker"

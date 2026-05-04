@@ -2,6 +2,7 @@ fullnameOverride: config-server
 
 image:
   name: config-server
+  pullPolicy: IfNotPresent
 
 ports:
   - name: http

@@ -2,6 +2,7 @@ fullnameOverride: review
 
 image:
   name: review-service
+  pullPolicy: IfNotPresent
 
 env:
   SPRING_PROFILES_ACTIVE: "docker"

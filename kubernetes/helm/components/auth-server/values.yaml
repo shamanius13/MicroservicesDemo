@@ -2,6 +2,7 @@ fullnameOverride: auth-server
 
 image:
   name: auth-server
+  pullPolicy: IfNotPresent
 
 env:
   SPRING_PROFILES_ACTIVE: "docker"

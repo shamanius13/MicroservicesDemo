@@ -2,6 +2,7 @@ fullnameOverride: product
 
 image:
   name: product-service
+  pullPolicy: IfNotPresent
 
 env:
   SPRING_PROFILES_ACTIVE: "docker"

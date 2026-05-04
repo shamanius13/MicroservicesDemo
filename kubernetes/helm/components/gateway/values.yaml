@@ -2,6 +2,7 @@ fullnameOverride: gateway
 
 image:
   name: gateway
+  pullPolicy: IfNotPresent
 
 ports:
   - containerPort: 8443
