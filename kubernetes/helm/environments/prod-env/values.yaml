@@ -94,6 +94,7 @@ product-composite:
     tag: v1
   env:
     SPRING_PROFILES_ACTIVE: "docker,prod"
+    APP_RESILIENCE_ENABLED: '"true"'
   envFromSecretRefs:
     - config-client-credentials
   resources:

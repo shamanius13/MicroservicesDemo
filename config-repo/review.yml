@@ -75,7 +75,10 @@ management.endpoint.health.group.readiness.include: readinessState, db
 ---
 spring.config.activate.on-profile: prod
 
-spring.datasource.url: jdbc:mysql://172.17.0.1:3306/review-db
+management.endpoints.web.exposure.include: health, info, circuitbreakers, circuitbreakerevents
+
+
+spring.datasource.url: jdbc:mysql://172.18.0.2:3306/review-db
 
 logging:
   level:

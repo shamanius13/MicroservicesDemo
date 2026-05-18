@@ -1,4 +1,4 @@
-package ak83.microservices.composite.product;
+package ak83.microservices.composite.product.configuration;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import io.github.resilience4j.retry.RetryRegistry;

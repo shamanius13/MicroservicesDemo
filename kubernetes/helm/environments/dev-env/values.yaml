@@ -42,6 +42,8 @@ review:
     - config-client-credentials
 
 product-composite:
+  env:
+    APP_RESILIENCE_ENABLED: '"true"'
   envFromSecretRefs:
     - config-client-credentials
 
