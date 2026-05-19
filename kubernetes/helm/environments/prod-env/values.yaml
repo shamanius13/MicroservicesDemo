@@ -55,6 +55,7 @@ product:
     tag: v1
   env:
     SPRING_PROFILES_ACTIVE: "docker,prod"
+    SPRING_DATASOURCE_URL: "jdbc:mysql://172.18.0.3:3306/product-db"
   envFromSecretRefs:
     - config-client-credentials
   resources:
@@ -68,6 +69,8 @@ recommendation:
     tag: v1
   env:
     SPRING_PROFILES_ACTIVE: "docker,prod"
+    SPRING_DATA_MONGODB_URI: "mongodb://172.18.0.2:27017/recommendation-db"
+    SPRING_RABBITMQ_HOST: "172.18.0.4"
   envFromSecretRefs:
     - config-client-credentials
   resources:
@@ -81,6 +84,8 @@ review:
     tag: v1
   env:
     SPRING_PROFILES_ACTIVE: "docker,prod"
+    SPRING_DATASOURCE_URL: "jdbc:mysql://172.18.0.3:3306/review-db"
+    SPRING_RABBITMQ_HOST: "172.18.0.4"
   envFromSecretRefs:
     - config-client-credentials
   resources:

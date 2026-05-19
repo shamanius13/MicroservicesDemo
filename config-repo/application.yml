@@ -49,7 +49,7 @@ management.health.kafka.enabled: true
 
 ---
 spring.config.activate.on-profile: prod
-spring.rabbitmq.host: 172.17.0.1
+spring.rabbitmq.host: host.docker.internal
 
 # Only allow management endpoints over http in production for info, health and circuitbreakerevents
 

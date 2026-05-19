@@ -78,7 +78,7 @@ spring.config.activate.on-profile: prod
 management.endpoints.web.exposure.include: health, info, circuitbreakers, circuitbreakerevents
 
 
-spring.datasource.url: jdbc:mysql://172.18.0.2:3306/review-db
+spring.datasource.url: jdbc:mysql://host.docker.internal:3306/review-db
 
 logging:
   level:

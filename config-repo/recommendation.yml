@@ -69,7 +69,7 @@ management.endpoint.health.group.readiness.include: readinessState, mongo
 ---
 spring.config.activate.on-profile: prod
 
-spring.mongodb.host: 172.17.0.1
+spring.mongodb.host: host.docker.internal
 
 logging:
   level:
